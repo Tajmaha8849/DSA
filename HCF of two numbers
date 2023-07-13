@@ -1,0 +1,16 @@
+"""
+Write a program to find hcf of two numbers
+"""
+def hcf(n1,n2):
+    while(n1!=n2):
+        if(n1>n2):
+            return hcf(n1-n2,n2)
+        else:
+            return hcf(n1,n2-n1)
+    return n1
+#Now we will take two numbers from the user
+a=int(input("Enter a first number:"))
+b=int(input("Enter a second number:"))
+
+#now we will call our function in the print statement becaue our function is returning  type
+print("HCF of two numbers is :",hcf(a,b))
