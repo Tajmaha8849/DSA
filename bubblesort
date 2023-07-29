@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jul 29 23:40:13 2023
+
+@author: shubham prajapati
+"""
+"""
+write a program to sort an array using Bubble sort in python
+Time complexity is O(n^2)
+#steps are very simple
+1.first take input input of array from user.
+2.then use for loops and take i=0
+and go inside the array and use j loop and check every element if left element of an array is greater then right element then
+swap both elements .
+similarily it will check the element.
+
+"""
+lst=eval(input("Enter an element in list:"))
+for i in range(0,len(lst)-1):
+    for j in range(0,len(lst)-i-1):
+        if(lst[j]>lst[j+1]):
+            temp=lst[j]
+            lst[j]=lst[j+1]
+            lst[j+1]=temp
+print(lst)
+
+
+
+
