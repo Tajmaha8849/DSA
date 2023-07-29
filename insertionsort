@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jul 30 00:10:50 2023
+
+@author: shubham prajapati
+"""
+
+"""
+write a program to sort an array using Insertion
+ sort
+Here you will first take an array then  and divide your array in two parts let assume first element of an array is sorted and 
+and  second part is unsorted.
+Now left part of an array will check with every element of an unsorted part whether it is big or not if greater then swap the position of both elements.
+
+ """
+
+lst=eval(input("Enter an element in list:"))
+for i in range(1,len(lst)):
+    j=i
+    while(lst[j-1]>lst[j] and j>0):
+        lst[j-1],lst[j]=lst[j],lst[j-1]
+        j=j-1
+        
+print(lst)
