@@ -1,5 +1,5 @@
 """
-Write a program to find hcf of two numbers
+Write a program to find hcf of two numbers using python
 """
 def hcf(n1,n2):
     while(n1!=n2):
