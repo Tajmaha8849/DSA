@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jul 30 00:10:50 2023
+
+@author: shubham parajapti
+"""
+
+"""
+write a program to sort an array using selection sort
+In this sorting we will take our first element of an array is smallest then we will compare smallest element with other 
+elements of an array if it greater than any of the element from an array so we will assign the index value of smallest element  to smallest variable
+after getting smallest element element with respect to previous smallest .we will swap the current smallest element to the previus smallest element index value.
+Similarily we will check for smallest element from an array with respect to previous smallest element.
+"""
+
+lst=eval(input("Enter an element in list:"))
+for i in range(0,len(lst)):
+    smallest=i
+    for j in range(i+1,len(lst)):
+        if(lst[smallest]>lst[j]):
+            smallest=j
+    temp=lst[smallest]
+    lst[smallest]=lst[i]
+    lst[i]=temp
+print(lst)
