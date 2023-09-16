@@ -23,4 +23,48 @@ for i in range(len(arr)):
     leftsum=0
     rightsum=0
 
+
+
+#In C language
+#include <stdio.h>
+
+int main()
+{
+    int size,ele;
+    int leftsum=0;
+    int rightsum=0;
+    int i,j,k,index;
+    printf("Enter size of an array:");
+    scanf("%d",&size);
+    int arr[size];
+    printf("Enter the elements:");
+    for(i=0;i<size;i++){
+        scanf("%d",&ele);
+        arr[i]=ele;
+    }
+    
+    
+    for(i=0;i<size;i++){
+        index=i;
+        for(j=0;j<index;j++){
+            leftsum=leftsum+arr[j];
+        }
+        for(k=i+1;k<size;k++){
+            rightsum=rightsum+arr[k];
+        }
+        if(leftsum==rightsum){
+            printf("Equivalent index is %d",i);
+            break;
+        }
+        leftsum=0;
+        rightsum=0;
+        
+        
+        
+    }
+
+    return 0;
+}
+
+
     
