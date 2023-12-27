@@ -1,0 +1,130 @@
+/******************************************************************************
+
+STACK USING ARRAY IN C
+
+*******************************************************************************/
+#include <stdio.h>
+#include<stdlib.h>
+
+#define MAX 5
+int stack[MAX],top=-1;
+void push(int data){
+    if(top==MAX-1){
+        printf("Overflow");
+        return;
+    }
+    else{
+        top++;
+        stack[top]=data;
+    }
+    
+}
+void pop(){
+    if(top==-1){
+        printf("underflow stack");
+        return;
+    }
+    else{
+        printf("Your element is poped successfully %d",stack[top--]);
+    }
+}
+void display(){
+    int i=0;
+    printf("Your stack elements are:");
+    for(i=0;i<top;i++){
+        printf("%d",stack[i]);
+       
+    }
+}
+
+void peek(){
+    if(top==-1){
+        printf("Empty stack.");
+        return;
+    }
+    else{
+        printf("The elements at peek is %d",stack[top]);
+    }
+}
+void mean(){
+    if(top==-1){
+        printf("Empty stack.");
+        return;
+    }
+    else{
+        int sum=0;
+        for(int i=0;i<top;i++){
+            sum+=stack[i];
+            
+        }
+        printf("Mean of all the elements is:%d",(sum/top));
+    }
+}
+void min(){
+    if(top==-1){
+        printf("Empty.");
+    }
+    else{
+        int minimum=stack[0];
+        for(int i=0;i<top;i++){
+            if(minimum>stack[i]){
+                minimum=stack[i];
+            }
+        }
+        printf("Minimum from the stack is %d is:",minimum);
+    }
+}
+
+int main()
+{
+    int choice;
+   //int a[]={10,20,30},choice;
+   while(1)
+   {
+   printf("\nMenu Operations on the stack.\n");
+   printf("1.Push operation.\n");
+   printf("2. Pop operation.\n");
+   printf("3.Peek operation.\n");
+   printf("4.Mean operation.\n");
+   printf("5.Display operation.\n");
+   printf("6.Minimum operation.\n7: Exit");
+   printf("\nEnter your choice: ");
+   scanf("%d",&choice);
+   switch(choice){
+       case 1:
+       int data;
+       printf("Enter an element to push:");
+       scanf("%d",&data);
+       push(data);
+       printf("The data is suceesfully pushed.");
+       break;
+       
+       case 2:
+       pop();
+       break;
+       
+       case 3:
+       peek();
+       break;
+       
+       case 4:
+       mean();
+       break;
+       
+       case 5:
+       display();
+       break;
+       
+       case 6:
+       min();
+       break;
+       
+       case 7: exit(0);
+       
+       
+   } 
+   printf("\n");
+       
+   }
+   
+}
